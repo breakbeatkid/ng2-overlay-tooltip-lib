@@ -4,7 +4,7 @@ import { ComponentPortal } from '@angular/cdk/portal';
 
 import { OverlayTooltipComponent } from './overlay-tooltip.component';
 
-@Directive({ selector: '[crowderOverlayTooltip]' })
+@Directive({ selector: '[overlayTooltip]' })
 export class OverlayTooltipDirective implements OnInit {
 
   @Input() tooltipMessage: string;

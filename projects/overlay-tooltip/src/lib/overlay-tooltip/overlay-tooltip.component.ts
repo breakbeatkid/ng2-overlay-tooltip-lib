@@ -2,7 +2,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
-  selector: 'crowder-overlay-tooltip',
+  selector: 'lib-overlay-tooltip',
   styleUrls: ['./overlay-tooltip.component.scss'],
   templateUrl: './overlay-tooltip.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -11,10 +11,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
       transition(':enter', [
         style({ opacity: 0 }),
         animate(300, style({ opacity: 1 })),
-      ]),
-      transition(':leave', [
-        animate(300, style({ opacity: 0 })),
-      ]),
+      ])
     ]),
   ],
 })
