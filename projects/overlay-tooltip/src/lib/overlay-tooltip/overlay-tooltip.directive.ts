@@ -17,6 +17,19 @@ export class OverlayTooltipDirective implements OnInit {
   }
 
   ngOnInit(): void {
+    this.setPosition();
+  }
+
+  @HostListener('mouseenter') show() {
+    const tooltipRef: ComponentRef<OverlayTooltipComponent> = this.overlayRef.attach(new ComponentPortal(OverlayTooltipComponent));
+    tooltipRef.instance.tooltipMessage = this.tooltipMessage;
+  }
+
+  @HostListener('mouseout') hide() {
+    this.overlayRef.detach();
+  }
+
+  private setPosition(): void {
     const positionStrategy = this.overlayPositionBuilder
       .flexibleConnectedTo(this.elementRef)
       .withPositions([{
@@ -28,14 +41,5 @@ export class OverlayTooltipDirective implements OnInit {
         }]);
 
     this.overlayRef = this.overlay.create({ positionStrategy });
-  }
-
-  @HostListener('mouseenter') show() {
-    const tooltipRef: ComponentRef<OverlayTooltipComponent> = this.overlayRef.attach(new ComponentPortal(OverlayTooltipComponent));
-    tooltipRef.instance.tooltipMessage = this.tooltipMessage;
-  }
-
-  @HostListener('mouseout') hide() {
-    this.overlayRef.detach();
   }
 }
