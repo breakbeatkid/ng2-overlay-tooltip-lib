@@ -1,0 +1,25 @@
+:host {
+  display: block
+}
+
+.tooltip {
+  min-width: 100px;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: black;
+  color: white;
+
+  &.tl {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 90px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: black transparent transparent transparent;
+
+    }
+  }
+}
