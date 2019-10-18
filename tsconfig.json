@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "overlay-tooltip": [
+        "dist/overlay-tooltip"
+      ],
+      "overlay-tooltip/*": [
+        "dist/overlay-tooltip/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
